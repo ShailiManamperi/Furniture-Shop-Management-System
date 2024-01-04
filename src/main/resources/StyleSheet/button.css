@@ -1,0 +1,75 @@
+#btnUpdate,#btncalculate{
+//-fx-background-color: #50EF8F;
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#77bff9, #fafafa, #77bff9);
+}#btnUpdate:hover,#btncalculate:hover{
+ //-fx-background-color: #50EF8F;
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#3878a5, #fafafa, #3878a5);
+}#btnUpdate:pressed,#btncalculate:pressed{
+  //-fx-background-color: #50EF8F;
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#2a6186, #fafafa, #2a6186);
+}
+#btnAdd{
+   //-fx-background-color: #50EF8F;
+       -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#78ebfc, #fafafa, #78ebfc);
+}#btnAdd:hover{
+    //-fx-background-color: #50EF8F;
+        -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#11d7f3, #fafafa, #11d7f3);
+}#btnAdd:pressed{
+    //-fx-background-color: #50EF8F;
+         -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#027081, #fafafa, #027081);
+ }
+#btnDelete,#btnfinish{
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#75b0ef, #ffffff, #75b0ef);
+}#btnDelete:hover,#btnfinish:hover{
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#5282b2, #ffffff, #5282b2);
+ }#btnDelete:pressed#btnfinish:pressed{
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#316291, #ffffff, #316291);
+  }
+#btnClear,#btnBill{
+//-fx-background-color: #F8EA6D;
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#02487f, #ffffff, #02487f);
+}#btnClear:hover,#btnBill:hover{
+ //-fx-background-color: #F8EA6D;
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#0b3b60, #ffffff, #0b3b60);
+ }#btnClear:pressed,#btnBill:pressed{
+  //-fx-background-color: #F8EA6D;
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#13334c, #ffffff, #13334c);
+  }
+
+#btncalculate{
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#92c7cf, #ffffff, #92c7cf);
+}#btncalculate:hover{
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#79abb3, #ffffff, #79abb3);
+}#btncalculate:pressed{
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#55838a, #ffffff, #55838a);
+}
+#btndiplay,#btnnewload{
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100%, #aad7d9,#ffffff, #aad7d9);
+}#btndiplay:hover,#btnnewload:hover{
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#79a9ab, #ffffff, #79a9ab);
+}#btndiplay:pressed,#btnnewload:pressed{
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#568082, #ffffff, #568082);
+}
+#btnNew,#btnsearch{
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#54BAB9, #ffffff, #54BAB9);
+}#btnNew:hover,#btnsearch :hover{
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#47a6a5, #ffffff, #47a6a5);
+}#btnNew:pressed,#btnsearch:pressed{
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#3b8f8e, #ffffff, #3b8f8e);
+}
+
+.dark {
+    -fx-background-color:
+            #090a0c,
+            linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+            linear-gradient(#20262b, #191d22),
+            radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
+}

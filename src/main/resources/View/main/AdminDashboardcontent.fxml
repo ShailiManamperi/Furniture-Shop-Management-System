@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="985.0" style="-fx-background-color: #F8F6F4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.AdminDahboardController">
+   <children>
+      <AnchorPane fx:id="customerPane" layoutX="54.0" layoutY="63.0" prefHeight="253.0" prefWidth="877.0">
+         <children>
+            <AnchorPane fx:id="customer1" layoutX="49.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: white;">
+               <children>
+                  <Label alignment="CENTER" layoutX="22.0" layoutY="15.0" prefHeight="34.0" prefWidth="157.0" text="Best Customer">
+                     <font>
+                        <Font name="System Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCustname" alignment="CENTER" layoutX="27.0" layoutY="79.0" prefHeight="34.0" prefWidth="157.0" text="Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblcustodercount" alignment="CENTER" layoutX="29.0" layoutY="135.0" prefHeight="34.0" prefWidth="157.0" text="Order Count">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customer2" layoutX="333.0" layoutY="22.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: white;">
+               <children>
+                  <Label alignment="CENTER" layoutX="27.0" layoutY="15.0" prefHeight="34.0" prefWidth="157.0" text="Best Sell Item">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblItemname" alignment="CENTER" layoutX="8.0" layoutY="75.0" prefHeight="34.0" prefWidth="201.0" text="Item Name">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblitemOrdercount" alignment="CENTER" layoutX="32.0" layoutY="135.0" prefHeight="34.0" prefWidth="157.0" text="Order Count">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customer3" layoutX="622.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: white;">
+               <children>
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="17.0" prefHeight="34.0" prefWidth="157.0" text="Today Sale">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblprice" alignment="CENTER" layoutX="28.0" layoutY="77.0" prefHeight="34.0" prefWidth="157.0" text="Price">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblordercount" alignment="CENTER" layoutX="31.0" layoutY="137.0" prefHeight="34.0" prefWidth="157.0" text="Order Count">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="chartPane" layoutX="50.0" layoutY="321.0" prefHeight="320.0" prefWidth="883.0" style="-fx-background-color: white;">
+         <children>
+            <BarChart fx:id="bargraph" layoutX="26.0" layoutY="10.0" prefHeight="308.0" prefWidth="829.0" style="-fx-background-color: white;" stylesheets="@../../StyleSheet/archart.css">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="80.0" layoutY="650.0" prefHeight="26.0" prefWidth="840.0" text="Copyright © 2022 ShailiManamperi. All Rights Reserved.This project is licensed under the MIT license.">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Asstes/logo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

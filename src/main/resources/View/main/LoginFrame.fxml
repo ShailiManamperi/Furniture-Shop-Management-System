@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.LoginFrameController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1244.0" opacity="0.82" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.25" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../Asstes/loginfromBG.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6b5036" height="546.0" layoutX="108.0" layoutY="66.0" opacity="0.32" stroke="BLACK" strokeType="INSIDE" width="1050.0" />
+      <AnchorPane layoutX="127.0" layoutY="89.0" prefHeight="500.0" prefWidth="500.0">
+         <children>
+            <Label alignment="CENTER" layoutX="133.0" layoutY="52.0" prefHeight="47.0" prefWidth="216.0" text="Sign In">
+               <font>
+                  <Font name="Californian FB" size="41.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtInUsername" layoutX="94.0" layoutY="199.0" prefHeight="30.0" prefWidth="312.0" promptText="User Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtInPassword" layoutX="94.0" layoutY="262.0" prefHeight="30.0" prefWidth="312.0" promptText="Pass Word">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="btnLogIn" layoutX="130.0" layoutY="429.0" onAction="#LoginUserOnAction" prefHeight="48.0" prefWidth="220.0" text="Login">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblForget" layoutX="92.0" layoutY="326.0" onMouseClicked="#getPasswordHintOnMoueClicked" prefHeight="38.0" prefWidth="163.0" text="Forget Password ?">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblHint" layoutX="252.0" layoutY="326.0" prefHeight="38.0" prefWidth="163.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtShowPassword" layoutX="94.0" layoutY="261.0" prefHeight="30.0" prefWidth="312.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fx:id="imgShowPassword" fitHeight="30.0" fitWidth="30.0" layoutX="356.0" layoutY="278.0" onMouseClicked="#SHowPasswordOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Asstes/icons8-eye-48%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgHideEye" fitHeight="30.0" fitWidth="30.0" layoutX="356.0" layoutY="279.0" onMouseClicked="#HidePasswordOnMOuseClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Asstes/icons8-hide-48%20(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="642.0" layoutY="90.0" prefHeight="500.0" prefWidth="500.0" stylesheets="@../../StyleSheet/loginForm.css">
+         <children>
+            <Label alignment="CENTER" layoutX="155.0" layoutY="19.0" prefHeight="59.0" prefWidth="216.0" text="Sign Up">
+               <font>
+                  <Font name="Californian FB" size="41.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtUpUsername" layoutX="102.0" layoutY="154.0" prefHeight="30.0" prefWidth="312.0" promptText="User Name">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtUpPassword" layoutX="102.0" layoutY="210.0" prefHeight="30.0" prefWidth="312.0" promptText="Pass Word">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXTextField fx:id="txtPsHint" layoutX="102.0" layoutY="324.0" prefHeight="30.0" prefWidth="312.0" promptText="Hint">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="cmbUserType" layoutX="102.0" layoutY="263.0" prefHeight="48.0" prefWidth="312.0" promptText="User Type" />
+            <JFXButton fx:id="btnRegister" layoutX="130.0" layoutY="429.0" onAction="#RegisterUserOnAction" prefHeight="48.0" prefWidth="220.0" text="Register">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="slider" layoutX="628.0" layoutY="104.0" prefHeight="483.0" prefWidth="505.0" style="-fx-background-color: BFB29E;">
+         <children>
+            <Label fx:id="lblGreeting" layoutX="81.0" layoutY="36.0" text="Good AfterNoon">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="37.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblwelcome" layoutX="155.0" layoutY="37.0" text="Welcome">
+               <font>
+                  <Font name="Rockwell Extra Bold" size="37.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLogin" layoutX="135.0" layoutY="330.0" text="Login to your Account ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCreate" layoutX="135.0" layoutY="331.0" text="Create a New Account">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btncreate" layoutX="139.0" layoutY="398.0" onAction="#ShowRegisterFormOnAction" prefHeight="49.0" prefWidth="227.0" text="Register">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnlogin" layoutX="137.0" layoutY="398.0" onAction="#ShowLoginFormOnAction" prefHeight="53.0" prefWidth="227.0" text="Login">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="182.0" fitWidth="195.0" layoutX="153.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Asstes/Brown%20and%20White%20Minimalist%20Elegant%20Simple%20Home%20Decor%20Company%20Logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../StyleSheet/Fileds.css" />
+      <URL value="@../../StyleSheet/loginForm.css" />
+   </stylesheets>
+</AnchorPane>

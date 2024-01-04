@@ -1,0 +1,14 @@
+#btnDashboard,#btnEmployee,#btnItem,#btnCustomer,#btnSupplier,#btnLogout{
+    -fx-background-color: #F8F6F4;
+    -fx-text-fill: #000000;
+}
+#btnDashboard:hover,#btnEmployee:hover,#btnItem:hover,#btnCustomer:hover,#btnSupplier:hover,#btnLogout:hover{
+    -fx-background-color: #E3F4F4;
+    -fx-text-fill: #000000;
+    /*-fx-background-radius: 80%;*/
+}
+#btnDashboard:pressed,#btnEmployee:pressed,#btnItem:pressed,#btnCustomer:pressed,#btnSupplier:pressed,#btnLogout:pressed{
+    -fx-background-color: #D2E9E9;
+    -fx-text-fill: #000000;
+    /*-fx-background-radius: 90%;*/
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1244.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.MainFromController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1244.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../Asstes/lodingfromBG.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="recbar" arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="35.0" layoutX="108.0" layoutY="460.0" stroke="BLACK" strokeType="INSIDE" width="1012.0" />
+      <Rectangle fx:id="recLoad" arcHeight="5.0" arcWidth="5.0" fill="#c9c3c3" height="35.0" layoutX="108.0" layoutY="459.0" stroke="BLACK" strokeType="INSIDE" width="96.0" />
+      <Label fx:id="lblLoading" alignment="CENTER" layoutX="337.0" layoutY="517.0" prefHeight="52.0" prefWidth="549.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
