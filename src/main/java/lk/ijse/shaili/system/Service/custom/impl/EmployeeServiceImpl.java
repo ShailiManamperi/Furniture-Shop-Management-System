@@ -47,7 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public boolean deleteEmployee(String employeeId) throws NotFoundException, InUseException, SQLException, ClassNotFoundException {
+    public boolean deleteEmployee(String employeeId) throws NotFoundException{
         if (!emDAO.existByPk(employeeId)) {
             throw new NotFoundException("Member not found!");
         }
@@ -56,10 +56,18 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public employeeDTO searchEmployee(String employeeId, String type) throws NotFoundException {
+        System.out.println(employeeId + " "+type);
         if (!emDAO.existByPk(employeeId)){
+            System.out.println("runs wrong");
             throw new NotFoundException("Employee is Not Found!");
         }
-        return converter.fromEmployee(emDAO.findEmployee(employeeId,type));
+        System.out.println("comes here");
+        employeeDTO employeeDTO = converter.fromEmployee(emDAO.findEmployee(employeeId, type));
+        if (employeeDTO!=null){
+            System.out.println("done");
+        }
+        System.out.println(employeeDTO);
+        return employeeDTO;
     }
 
     @Override

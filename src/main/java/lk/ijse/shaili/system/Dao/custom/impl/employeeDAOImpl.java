@@ -54,7 +54,7 @@ public class employeeDAOImpl implements employeeDAO {
                 return false;
             }
         } catch (SQLException e) {
-            throw new ConstraintViolationException(e);
+            throw new RuntimeException("Failed to delete Employee");
         }
         return true;
     }
@@ -145,8 +145,23 @@ public class employeeDAOImpl implements employeeDAO {
 
     @Override
     public Employee findEmployee(String id, String type) {
+        System.out.println("dao "+id+" "+type);
         try {
-            ResultSet rst = DBUtil.executeQuery("Select * from employee where " + type + "= ?", id);
+            String sql = "Select * from employee where " + type + "= ?";
+            System.out.println(sql);
+            ResultSet rst = DBUtil.executeQuery(sql, id);
+            boolean b = existByPk(id);
+            if (rst.next()){
+                System.out.println(rst);
+                System.out.println(rst.getString(1)+" 1 ");
+                System.out.println(rst.getString(2)+" 2 ");
+                System.out.println(rst.getString(3)+" 3 ");
+                System.out.println(rst.getString(4)+" 4 ");
+                System.out.println(rst.getDouble(5)+" 5 ");
+                System.out.println(rst.getString(6)+" 6 ");
+                System.out.println(rst.getString(7)+" 7 ");
+                System.out.println(rst.getString(8)+" 8 ");
+            }
             if(rst.next()){
                 return new Employee(
                         rst.getString(1),
@@ -156,7 +171,8 @@ public class employeeDAOImpl implements employeeDAO {
                         rst.getString(5),
                         rst.getString(6),
                         rst.getDouble(7),
-                        rst.getString(8));
+                        rst.getString(8)
+                );
             }
             return null;
         } catch (SQLException e) {
