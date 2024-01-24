@@ -133,7 +133,6 @@ public class CustomerFrameController {
         String contact = txtcontact.getText();
         String nic = txtnic.getText();
         CustomerDTO customerDTO = new CustomerDTO(custid,custname,address,contact,nic);
-        System.out.println(customerDTO);
         return customerDTO;
     }
 
@@ -142,7 +141,6 @@ public class CustomerFrameController {
         String cid = txtcustid.getText();
         if (customerDTO.getCid().equals(cid)){
             CustomerDTO customerDTO = makeObject();
-            System.out.println("Frame"+customerDTO);
             CustomerDTO customerDTO1 = customerService.updateCustomer(customerDTO);
             if (customerDTO1 == null){
                 new Alert(Alert.AlertType.ERROR,"This Customer is Not Update!",ButtonType.OK).show();

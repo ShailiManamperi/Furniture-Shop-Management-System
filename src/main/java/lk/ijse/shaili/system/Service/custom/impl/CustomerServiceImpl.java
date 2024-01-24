@@ -45,7 +45,6 @@ public class CustomerServiceImpl implements CustomerService {
             throw new NotFoundException("Customer not found!");
         } else {
             Customer customer = converter.toCustomer(customerDTO);
-            System.out.println("Service "+customer);
             customerDAO.update(converter.toCustomer(customerDTO));
             return customerDTO;
         }

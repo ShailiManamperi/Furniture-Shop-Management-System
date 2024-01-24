@@ -21,7 +21,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public Customer save(Customer entity) throws ConstraintViolationException {
-        System.out.println(entity);
         try {
             if(DBUtil.executeUpdate("INSERT INTO customer VALUES (?, ?, ?, ?, ?)",
                     entity.getCid(), entity.getName(), entity.getAddress(),entity.getContact(),entity.getNic())){
@@ -35,7 +34,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public Customer update(Customer entity) throws ConstraintViolationException {
-        System.out.println(entity);
         try {
             String sql ="UPDATE customer SET name = ?, address = ?, contact = ? ,nic = ? WHERE C_id = ?";
             System.out.println(sql);
