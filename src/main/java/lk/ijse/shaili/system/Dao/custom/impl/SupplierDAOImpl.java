@@ -1,11 +1,5 @@
 package lk.ijse.shaili.system.Dao.custom.impl;
 
-//import lk.ijse.system.dao.custom.SupplierDAO;
-//import lk.ijse.system.dao.exception.ConstraintViolationException;
-//import lk.ijse.system.dao.util.DBUtil;
-//import lk.ijse.system.entity.Supplier;
-
-
 import lk.ijse.shaili.system.Dao.custom.SupplierDAO;
 import lk.ijse.shaili.system.Dao.exception.ConstraintViolationException;
 import lk.ijse.shaili.system.Dao.util.DBUtil;
@@ -171,13 +165,14 @@ public class SupplierDAOImpl implements SupplierDAO {
         try {
             String sql = "SELECT sup_id FROM suppliers ORDER BY sup_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);
-            if (!result.next()) {
-                supplierid = generateNextSuppierId(result.getString(null));
+            if (result.next()) {
+                supplierid = generateNextSuppierId(result.getString(1));
             }
-            supplierid = generateNextSuppierId(result.getString(1));
+            supplierid = generateNextSuppierId(null);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return supplierid;
     }
 
