@@ -187,7 +187,7 @@ public class employeeDAOImpl implements employeeDAO {
             String sql = "SELECT E_id FROM employee ORDER BY E_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);
             if (!result.next()) {
-                empid = generateNextEmployeeId(result.getString(null));
+                empid = generateNextEmployeeId(null);
             }
             empid = generateNextEmployeeId(result.getString(1));
         } catch (SQLException e) {
