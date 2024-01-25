@@ -41,12 +41,8 @@
                   <Font size="16.0" />
                </font>
             </JFXTextField>
-            <JFXComboBox fx:id="cmbtype" prefHeight="25.0" prefWidth="292.0" promptText="Item Type" />
-            <JFXTextField fx:id="txtsupplier" prefHeight="37.0" prefWidth="389.0" promptText="Supplier">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXTextField>
+            <JFXComboBox fx:id="cmbtype" prefHeight="25.0" prefWidth="365.0" promptText="Item Type" />
+            <JFXComboBox fx:id="cmbsupplier" prefHeight="34.0" prefWidth="359.0" promptText="Supplier" />
             <JFXTextField fx:id="txtprice" prefHeight="37.0" prefWidth="389.0" promptText="Get Price">
                <font>
                   <Font size="16.0" />
