@@ -127,7 +127,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             String sql = "SELECT C_id FROM customer ORDER BY C_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);
             if (!result.next()) {
-                custid = generateNextCustomerId(result.getString(null));
+                custid = generateNextCustomerId(null);
             }
             custid = generateNextCustomerId(result.getString(1));
         } catch (SQLException e) {
