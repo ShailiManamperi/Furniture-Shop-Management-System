@@ -1,61 +1,61 @@
 #btnUpdate,#btncalculate{
 //-fx-background-color: #50EF8F;
-    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#77bff9, #fafafa, #77bff9);
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#f9cc77, #fafafa, #f9cc77);
 }#btnUpdate:hover,#btncalculate:hover{
  //-fx-background-color: #50EF8F;
-     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#3878a5, #fafafa, #3878a5);
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#a57f38, #fafafa, #a57f38);
 }#btnUpdate:pressed,#btncalculate:pressed{
   //-fx-background-color: #50EF8F;
-      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#2a6186, #fafafa, #2a6186);
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#86672a, #fafafa, #86672a);
 }
 #btnAdd{
    //-fx-background-color: #50EF8F;
-       -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#78ebfc, #fafafa, #78ebfc);
+       -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#fcd478, #fafafa, #fcd478);
 }#btnAdd:hover{
     //-fx-background-color: #50EF8F;
-        -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#11d7f3, #fafafa, #11d7f3);
+        -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#f3ab11, #fafafa, #f3ab11);
 }#btnAdd:pressed{
     //-fx-background-color: #50EF8F;
-         -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#027081, #fafafa, #027081);
+         -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#815702, #fafafa, #815702);
  }
 #btnDelete,#btnfinish{
-    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#75b0ef, #ffffff, #75b0ef);
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#efca75, #ffffff, #efca75);
 }#btnDelete:hover,#btnfinish:hover{
-     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#5282b2, #ffffff, #5282b2);
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#b29752, #ffffff, #b29752);
  }#btnDelete:pressed#btnfinish:pressed{
-      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#316291, #ffffff, #316291);
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#917431, #ffffff, #917431);
   }
 #btnClear,#btnBill{
 //-fx-background-color: #F8EA6D;
-    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#02487f, #ffffff, #02487f);
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#7f5c02, #ffffff, #7f5c02);
 }#btnClear:hover,#btnBill:hover{
  //-fx-background-color: #F8EA6D;
-     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#0b3b60, #ffffff, #0b3b60);
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#60450b, #ffffff, #60450b);
  }#btnClear:pressed,#btnBill:pressed{
   //-fx-background-color: #F8EA6D;
-      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#13334c, #ffffff, #13334c);
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#4c3b13, #ffffff, #4c3b13);
   }
 
 #btncalculate{
-    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#92c7cf, #ffffff, #92c7cf);
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#cfbd92, #ffffff, #cfbd92);
 }#btncalculate:hover{
-     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#79abb3, #ffffff, #79abb3);
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#b3a279, #ffffff, #b3a279);
 }#btncalculate:pressed{
-      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#55838a, #ffffff, #55838a);
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#8a7855, #ffffff, #8a7855);
 }
 #btndiplay,#btnnewload{
-    -fx-background-color: linear-gradient(from 0% 10% to 95% 100%, #aad7d9,#ffffff, #aad7d9);
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100%, #d9caaa,#ffffff, #d9caaa);
 }#btndiplay:hover,#btnnewload:hover{
-     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#79a9ab, #ffffff, #79a9ab);
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#ab9c79, #ffffff, #ab9c79);
 }#btndiplay:pressed,#btnnewload:pressed{
-      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#568082, #ffffff, #568082);
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#827656, #ffffff, #827656);
 }
 #btnNew,#btnsearch{
-    -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#54BAB9, #ffffff, #54BAB9);
+    -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#ba9b54, #ffffff, #ba9b54);
 }#btnNew:hover,#btnsearch :hover{
-     -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#47a6a5, #ffffff, #47a6a5);
+     -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#a68a47, #ffffff, #a68a47);
 }#btnNew:pressed,#btnsearch:pressed{
-      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#3b8f8e, #ffffff, #3b8f8e);
+      -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#8f763b, #ffffff, #8f763b);
 }
 
 .dark {
