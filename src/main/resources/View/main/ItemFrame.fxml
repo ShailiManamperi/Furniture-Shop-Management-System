@@ -68,7 +68,7 @@
             <Image url="@../../Asstes/logo.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="85.0" layoutY="5.0" prefHeight="43.0" prefWidth="273.0" text="Items Management" textFill="#3646a1">
+      <Label layoutX="85.0" layoutY="5.0" prefHeight="43.0" prefWidth="273.0" text="Items Management" textFill="#a07636">
          <font>
             <Font name="High Tower Text Italic" size="35.0" />
          </font>

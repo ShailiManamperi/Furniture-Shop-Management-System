@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -94,5 +95,6 @@
             <Image url="@../../Asstes/logo.jpg" />
          </image>
       </ImageView>
+      <JFXButton buttonType="RAISED" layoutX="795.0" layoutY="20.0" prefHeight="38.0" prefWidth="176.0" text="Attendance" />
    </children>
 </AnchorPane>
