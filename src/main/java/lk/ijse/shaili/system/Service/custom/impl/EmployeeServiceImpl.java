@@ -4,6 +4,7 @@ import lk.ijse.shaili.system.Dao.DaoFactory;
 import lk.ijse.shaili.system.Dao.custom.employeeDAO;
 import lk.ijse.shaili.system.Db.DBConnection;
 import lk.ijse.shaili.system.Dto.employeeDTO;
+import lk.ijse.shaili.system.Entity.Employee;
 import lk.ijse.shaili.system.Service.custom.EmployeeService;
 import lk.ijse.shaili.system.Service.exception.*;
 import lk.ijse.shaili.system.Service.util.Converter;
@@ -61,18 +62,15 @@ public class EmployeeServiceImpl implements EmployeeService {
             System.out.println("runs wrong");
             throw new NotFoundException("Employee is Not Found!");
         }
-        System.out.println("comes here");
-        employeeDTO employeeDTO = converter.fromEmployee(emDAO.findEmployee(employeeId, type));
-        if (employeeDTO!=null){
-            System.out.println("done");
-        }
-        System.out.println(employeeDTO);
-        return employeeDTO;
+        Employee employee = emDAO.findEmployee(employeeId, type);
+        System.out.println(employee);
+        return converter.fromEmployee(employee);
     }
 
     @Override
     public String generateNewEmployeeId() throws SQLException {
         String newEmployeeId = emDAO.findNewEmployeeId();
+        System.out.println(newEmployeeId);
         return newEmployeeId;
     }
 }

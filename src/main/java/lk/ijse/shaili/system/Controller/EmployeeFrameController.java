@@ -84,6 +84,8 @@ public class EmployeeFrameController {
         cmbmonth.setPromptText("Select Month");
         btnUpdate.setDisable(true);
         btnDelete.setDisable(true);
+        this.employeeService = ServiceFactory.getInstance().getService(ServiceTypes.EMPLOYEE);
+        this.attendanceService = ServiceFactory.getInstance().getService(ServiceTypes.ATTEND);
     }
     private void fillData() {
         txtname.setText(selectedUser.getName());
@@ -118,8 +120,7 @@ public class EmployeeFrameController {
         }else{
             String search = txtSearch.getText();
             System.out.println(search);
-            this.employeeService = ServiceFactory.getInstance().getService(ServiceTypes.EMPLOYEE);
-            this.attendanceService = ServiceFactory.getInstance().getService(ServiceTypes.ATTEND);
+
             selectedUser = employeeService.searchEmployee(search,selectedtype);
             System.out.println(selectedUser);
             if (selectedUser == null){
@@ -199,7 +200,8 @@ public class EmployeeFrameController {
         cmbtype.setValue(null);
     }
 
-    public void newEmployeeIdOnAction(ActionEvent actionEvent) {
+    public void newEmployeeIdOnAction(ActionEvent actionEvent) throws SQLException {
+
         try {
             String empid = employeeService.generateNewEmployeeId();
             txtid.setText(empid);
