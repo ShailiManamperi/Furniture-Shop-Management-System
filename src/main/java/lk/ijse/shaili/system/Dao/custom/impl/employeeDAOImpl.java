@@ -146,38 +146,30 @@ public class employeeDAOImpl implements employeeDAO {
     @Override
     public Employee findEmployee(String id, String type) {
         System.out.println("dao "+id+" "+type);
+        Employee e1=null;
         try {
             String sql = "Select * from employee where " + type + "= ?";
             System.out.println(sql);
             ResultSet rst = DBUtil.executeQuery(sql, id);
             boolean b = existByPk(id);
-            if (rst.next()){
-                System.out.println(rst);
-                System.out.println(rst.getString(1)+" 1 ");
-                System.out.println(rst.getString(2)+" 2 ");
-                System.out.println(rst.getString(3)+" 3 ");
-                System.out.println(rst.getString(4)+" 4 ");
-                System.out.println(rst.getDouble(5)+" 5 ");
-                System.out.println(rst.getString(6)+" 6 ");
-                System.out.println(rst.getString(7)+" 7 ");
-                System.out.println(rst.getString(8)+" 8 ");
-            }
             if(rst.next()){
-                return new Employee(
-                        rst.getString(1),
-                        rst.getString(2),
-                        rst.getString(3),
-                        rst.getString(4),
-                        rst.getString(5),
-                        rst.getString(6),
-                        rst.getDouble(7),
-                        rst.getString(8)
+                e1= new Employee(
+                        rst.getString("E_id"),
+                        rst.getString("Name"),
+                        rst.getString("dob"),
+                        rst.getString("address"),
+                        rst.getString("job"),
+                        rst.getString("contact"),
+                        rst.getDouble("salary"),
+                        rst.getString("Nic")
+
                 );
             }
-            return null;
+
         } catch (SQLException e) {
             throw new RuntimeException("Failed to find the employee details");
         }
+        return e1;
     }
 
     @Override
@@ -187,7 +179,7 @@ public class employeeDAOImpl implements employeeDAO {
             String sql = "SELECT E_id FROM employee ORDER BY E_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);
             if (!result.next()) {
-                empid = generateNextEmployeeId(null);
+                empid = generateNextEmployeeId(result.getString(null));
             }
             empid = generateNextEmployeeId(result.getString(1));
         } catch (SQLException e) {
