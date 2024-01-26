@@ -8,6 +8,7 @@ import lk.ijse.shaili.system.Dao.SuperDAO;
 import lk.ijse.shaili.system.Dao.exception.ConstraintViolationException;
 import lk.ijse.shaili.system.Entity.Supplier;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,9 +27,11 @@ public interface SupplierDAO extends SuperDAO {
 
     long count();
 
-    public Supplier searchsupplier(String id);
+     Supplier searchsupplier(String id);
 
-    public List<Supplier> searchByText(String text);
+     List<Supplier> searchByText(String text);
 
-    public String findNewSupplierId();
+    String findNewSupplierId();
+
+    List<String> findCompanies() throws SQLException;
 }

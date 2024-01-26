@@ -11,23 +11,25 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SupplierService extends SuperService {
-    public Optional<Supplier> searchSupplierByID(String id);
+     Optional<Supplier> searchSupplierByID(String id);
 
-    public SupplierDTO searchSupplier(String text);
+     SupplierDTO searchSupplier(String text);
 
-    public SupplierDTO saveSupplier(SupplierDTO supplierDTO) throws DuplicateException;
+     SupplierDTO saveSupplier(SupplierDTO supplierDTO) throws DuplicateException;
 
-    public SupplierDTO updatSupplier(SupplierDTO supplierDTO) throws NotFoundException;
+     SupplierDTO updatSupplier(SupplierDTO supplierDTO) throws NotFoundException;
 
-    public List<SupplierDTO> searchSupplierList(String text) throws NotFoundException;
+     List<SupplierDTO> searchSupplierList(String text) throws NotFoundException;
 
-    public boolean deleteSupplier(String id) throws  NotFoundException;
+     boolean deleteSupplier(String id) throws  NotFoundException;
 
-    public String generateNewSupplierId() throws SQLException;
+     String generateNewSupplierId() throws SQLException;
 
-    public boolean searchDuplicate(String id) throws NotFoundException;
+     boolean searchDuplicate(String id) throws NotFoundException;
 
-    public List<SupplierDTO> getAllSupplier();
+     List<SupplierDTO> getAllSupplier();
 
-    public Optional<SupplierDTO> searchSupplier1(String id);
+     Optional<SupplierDTO> searchSupplier1(String id);
+
+     List<String> getSuppliers() throws SQLException;
 }

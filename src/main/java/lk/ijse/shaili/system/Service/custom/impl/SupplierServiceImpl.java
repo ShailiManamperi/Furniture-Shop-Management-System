@@ -109,4 +109,10 @@ public class SupplierServiceImpl implements SupplierService {
     public Optional<SupplierDTO> searchSupplier1(String id) {
         return Optional.empty();
     }
+
+    @Override
+    public List<String> getSuppliers() throws SQLException {
+        List<String> companies = supplierDAO.findCompanies();
+        return companies;
+    }
 }

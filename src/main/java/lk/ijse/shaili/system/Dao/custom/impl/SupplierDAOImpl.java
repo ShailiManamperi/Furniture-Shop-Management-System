@@ -165,15 +165,31 @@ public class SupplierDAOImpl implements SupplierDAO {
         try {
             String sql = "SELECT sup_id FROM suppliers ORDER BY sup_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);
-            if (result.next()) {
-                supplierid = generateNextSuppierId(result.getString(1));
+            if (!result.next()) {
+                supplierid = generateNextSuppierId(result.getString(null));
             }
-            supplierid = generateNextSuppierId(null);
+            supplierid = generateNextSuppierId(result.getString(1));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return supplierid;
+    }
+
+    @Override
+    public List<String> findCompanies()  {
+        List<String> companyList = new ArrayList<>();
+
+        try {
+            ResultSet resultSet = DBUtil.executeQuery("SELECT company FROM suppliers");
+
+            while (resultSet.next()) {
+                String companyName = resultSet.getString("company");
+                companyList.add(companyName);
+            }
+            return companyList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private String generateNextSuppierId(String currentSupplierId) {
