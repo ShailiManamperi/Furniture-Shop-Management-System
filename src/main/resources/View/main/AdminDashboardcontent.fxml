@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="985.0" style="-fx-background-color: #F8F6F4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.AdminDahboardController">
+<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="985.0" style="-fx-background-color: #FBF9F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.AdminDahboardController">
    <children>
       <AnchorPane fx:id="customerPane" layoutX="54.0" layoutY="63.0" prefHeight="253.0" prefWidth="877.0">
          <children>
-            <AnchorPane fx:id="customer1" layoutX="49.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="customer1" layoutX="49.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: #FBF9F1;">
                <children>
                   <Label alignment="CENTER" layoutX="22.0" layoutY="15.0" prefHeight="34.0" prefWidth="157.0" text="Best Customer">
                      <font>
@@ -33,7 +33,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="customer2" layoutX="333.0" layoutY="22.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="customer2" layoutX="333.0" layoutY="22.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: #FBF9F1;">
                <children>
                   <Label alignment="CENTER" layoutX="27.0" layoutY="15.0" prefHeight="34.0" prefWidth="157.0" text="Best Sell Item">
                      <font>
@@ -52,7 +52,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="customer3" layoutX="622.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: white;">
+            <AnchorPane fx:id="customer3" layoutX="622.0" layoutY="21.0" prefHeight="215.0" prefWidth="209.0" style="-fx-background-color: FBF9F1;">
                <children>
                   <Label alignment="CENTER" layoutX="26.0" layoutY="17.0" prefHeight="34.0" prefWidth="157.0" text="Today Sale">
                      <font>
@@ -73,7 +73,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="chartPane" layoutX="50.0" layoutY="321.0" prefHeight="320.0" prefWidth="883.0" style="-fx-background-color: white;">
+      <AnchorPane fx:id="chartPane" layoutX="50.0" layoutY="321.0" prefHeight="320.0" prefWidth="883.0" style="-fx-background-color: FBF9F1;">
          <children>
             <BarChart fx:id="bargraph" layoutX="26.0" layoutY="10.0" prefHeight="308.0" prefWidth="829.0" style="-fx-background-color: white;" stylesheets="@../../StyleSheet/archart.css">
               <xAxis>

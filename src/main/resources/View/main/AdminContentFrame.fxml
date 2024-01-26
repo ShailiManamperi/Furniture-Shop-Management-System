@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1244.0" stylesheets="@../../StyleSheet/AdminDashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.AdminContentFrameController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="700.0" stroke="WHITE" strokeType="INSIDE" width="260.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4ecdf" height="700.0" stroke="WHITE" strokeType="INSIDE" width="260.0" />
       <AnchorPane fx:id="pane" layoutX="260.0" prefHeight="700.0" prefWidth="985.0" />
       <VBox layoutX="11.0" layoutY="124.0" prefHeight="511.0" prefWidth="237.0" spacing="30.0">
          <children>

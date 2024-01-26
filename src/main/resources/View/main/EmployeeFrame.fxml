@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="985.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.EmployeeFrameController">
+<AnchorPane fx:id="frame" prefHeight="700.0" prefWidth="985.0" style="-fx-background-color: #FBF9F1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.EmployeeFrameController">
    <children>
       <ImageView fitHeight="427.0" fitWidth="438.0" layoutX="330.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
