@@ -25,19 +25,21 @@ public interface ItemDAO extends SuperDAO {
 
     long count();
 
-    public List<Item> searchByText(String text);
+     List<Item> searchByText(String text);
 
-    public String findNewItemId();
+     String findNewItemId();
 
-    public List<Item> getAllItems();
+     List<Item> getAllItems();
 
-    public  boolean updateQty(ArrayList<CartDetail> cartDetails) throws SQLException, ClassNotFoundException;
+     boolean updateQty(ArrayList<CartDetail> cartDetails) throws SQLException, ClassNotFoundException;
 
     boolean updateLoadQty(ArrayList<Detail> details) throws SQLException,ClassNotFoundException;
 
-    public  boolean saveOrderDetails(ArrayList<CartDetail> cartDetails, PlaceOrder placeOrder) throws SQLException, ClassNotFoundException;
+    boolean saveOrderDetails(ArrayList<CartDetail> cartDetails, PlaceOrder placeOrder) throws SQLException, ClassNotFoundException;
 
-    public  ArrayList<String> loadItemIds() throws SQLException, ClassNotFoundException;
+    ArrayList<String> loadItemIds() throws SQLException, ClassNotFoundException;
 
-    public BestItem findBestItem();
+    BestItem findBestItem();
+
+
 }

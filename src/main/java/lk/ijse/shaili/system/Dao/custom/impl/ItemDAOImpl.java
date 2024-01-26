@@ -24,7 +24,7 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public Item save(Item entity) throws ConstraintViolationException {
         try {
-            if(DBUtil.executeUpdate("INSERT INTO items (code, name, Type, get_price, sell_Price, qty, sup_id) VALUES (?,?,?,?,?,?,?)",
+            if(DBUtil.executeUpdate("INSERT INTO items (code, name, T_id, getprice, sellPrice, qty, sup_id) VALUES (?,?,?,?,?,?,?)",
                     entity.getCode(),entity.getName(),entity.getType(),entity.getGet_price(),entity.getSell_price(),
                     entity.getQty(),entity.getSupid())){
                 return entity;
@@ -38,7 +38,7 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public Item update(Item entity) throws ConstraintViolationException {
         try {
-            String sql ="UPDATE items SET  name = ?, Type =?, get_price = ?, sell_Price = ?, qty = ?, sup_id = ? WHERE code=?;";
+            String sql ="UPDATE items SET  name = ?, T_id =?, getprice = ?, sellPrice = ?, qty = ?, sup_id = ? WHERE code=?;";
             if(DBUtil.executeUpdate(sql,entity.getName(),entity.getType(),entity.getGet_price(),entity.getSell_price(),
                     entity.getQty(),entity.getSupid(),entity.getCode())){
                 return entity;
@@ -93,6 +93,7 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public Optional<Item> findByPk(String pk) {
+        System.out.println(pk);
         try{
             ResultSet rst = DBUtil.executeQuery("SELECT * FROM items WHERE code=?", pk);
             if(rst.next()){
@@ -102,8 +103,8 @@ public class ItemDAOImpl implements ItemDAO {
                         rst.getString(3),
                         rst.getDouble(4),
                         rst.getDouble(5),
-                        rst.getInt(6),
-                        rst.getString(7)
+                        rst.getInt(7),
+                        rst.getString(6)
                 ));
             }
             return Optional.empty();
@@ -179,13 +180,13 @@ public class ItemDAOImpl implements ItemDAO {
             ResultSet rs = DBUtil.executeQuery("SELECT * FROM items ");
             while (rs.next()) {
                 ob.add(new Item(
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getDouble(4),
-                        rs.getDouble(5),
-                        rs.getInt(6),
-                        rs.getString(7)));
+                        rs.getString("code"),
+                        rs.getString("name"),
+                        rs.getString("T_id"),
+                        rs.getDouble("getprice"),
+                        rs.getDouble("sellprice"),
+                        rs.getInt("qty"),
+                        rs.getString("sup_id")));
             }
             return ob;
         } catch (SQLException e) {
@@ -269,6 +270,8 @@ public class ItemDAOImpl implements ItemDAO {
         }
         return b1;
     }
+
+
 
     private  boolean save(CartDetail cartDetail, PlaceOrder placeOrder) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO order_detail VALUES(?, ?, ?)";
