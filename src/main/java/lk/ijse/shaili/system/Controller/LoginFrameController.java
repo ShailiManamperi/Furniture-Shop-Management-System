@@ -15,6 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+import lk.ijse.shaili.system.Dto.UserDTO;
+import lk.ijse.shaili.system.Service.custom.UserService;
 import lk.ijse.shaili.system.Util.Navigation;
 import lk.ijse.shaili.system.Util.Routes;
 
@@ -86,6 +88,11 @@ public class LoginFrameController {
     @FXML
     private JFXButton btnlogin;
 
+    private UserService userService;
+
+    public static UserDTO u1;
+
+
     public void initialize(){
         setWelcome();
         cmbUserType.getItems().addAll("Admin", "Cashier");
@@ -114,7 +121,7 @@ public class LoginFrameController {
         time.setCycleCount(Animation.INDEFINITE);
         time.play();
     }
-   
+
 
     public void LoginUserOnAction(javafx.event.ActionEvent actionEvent) throws IOException {
         Navigation.navigate(Routes.ADMIN,pane);
