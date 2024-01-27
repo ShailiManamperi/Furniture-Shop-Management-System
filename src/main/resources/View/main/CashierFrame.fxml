@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="700.0" prefWidth="1244.0" stylesheets="@../../StyleSheet/AdminDashboard.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.shaili.system.Controller.CashierFrameController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4ecdf" height="700.0" stroke="WHITE" strokeType="INSIDE" width="260.0" />
+      <Label fx:id="lblName" layoutX="43.0" layoutY="67.0" prefHeight="41.0" prefWidth="195.0" text="Mr.Vishwa">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Label>
+      <VBox layoutX="21.0" layoutY="274.0" prefHeight="163.0" prefWidth="237.0" spacing="30.0">
+         <children>
+            <JFXButton fx:id="btnOrder" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#showDahboardOnAction" onMouseEntered="#btnDashboradOnMouseEnteredAction" onMouseExited="#btndashboardOnMouseExitAction" prefHeight="55.0" prefWidth="242.0" text="Dashboard" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imgOrder" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Asstes/order.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="btnLogout" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#logoutOnAction" onMouseEntered="#btnLogoutOnMouseEnteredAction" onMouseExited="#btnLogoutOnMouseExitAction" prefHeight="55.0" prefWidth="242.0" text="Logout" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imgLogout" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Asstes/icons8-logout-50.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </padding>
+      </VBox>
+      <Label fx:id="lblGreeting" layoutX="38.0" layoutY="26.0" prefHeight="41.0" prefWidth="219.0" text="Good Afternoon">
+         <font>
+            <Font name="Berlin Sans FB" size="31.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="pane1" layoutX="265.0" layoutY="15.0" prefHeight="700.0" prefWidth="985.0" />
+   </children>
+</AnchorPane>
