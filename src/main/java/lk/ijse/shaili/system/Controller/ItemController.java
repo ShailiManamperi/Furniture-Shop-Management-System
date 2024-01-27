@@ -212,7 +212,7 @@ public class ItemController {
     }
 
     public void addnewitemloadframeOnAction(ActionEvent actionEvent) throws IOException {
-        URL resource = this.getClass().getResource("/view/newItemLoadFrame.fxml");
+        URL resource = this.getClass().getResource("/View/main/newItemLoadFrame.fxml");
         AnchorPane container = FXMLLoader.load(resource);
         Stage stage = new Stage();
         stage.setScene(new Scene(container));
