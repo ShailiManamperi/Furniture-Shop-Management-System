@@ -69,4 +69,16 @@ public class SupplierOrderDTO {
     public void setDetails(ArrayList<Detail> details) {
         this.details = details;
     }
+
+    @Override
+    public String toString() {
+        return "SupplierOrderDTO{" +
+                "soi_id='" + soi_id + '\'' +
+                ", date='" + date + '\'' +
+                ", sup_id='" + sup_id + '\'' +
+                ", amount=" + amount +
+                ", status='" + status + '\'' +
+                ", details=" + details +
+                '}';
+    }
 }

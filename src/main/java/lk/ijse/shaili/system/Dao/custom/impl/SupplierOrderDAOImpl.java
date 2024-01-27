@@ -27,7 +27,7 @@ public class SupplierOrderDAOImpl implements SupplierOrderDAO {
             String sql = "SELECT so_id FROM supplier_order ORDER BY so_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);
             if (!result.next()) {
-                loadid = generateNextLoadId(result.getString(null));
+                loadid = generateNextLoadId(null);
             }
             loadid = generateNextLoadId(result.getString(1));
         } catch (SQLException e) {
@@ -50,6 +50,7 @@ public class SupplierOrderDAOImpl implements SupplierOrderDAO {
 
     @Override
     public Supplier_oder saveOrder(Supplier_oder entity) {
+        System.out.println(entity);
         try {
             if(DBUtil.executeUpdate("insert into supplier_order values(?,?,?,?,?)",
             entity.getSoi_id(),entity.getDate(),entity.getSup_id(),entity.getAmount(),entity.getStatus())){

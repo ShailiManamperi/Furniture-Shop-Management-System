@@ -49,7 +49,9 @@ public class SupplierOrderServiceImpl implements SupplierOrderService {
     public boolean PlaceLoad(SupplierOrderDTO supplierOrderDTO, InvoiceDTO invoiceDTO) throws ClassNotFoundException, SQLException {
         try {
             DBConnection.getDbConnection().getConnection().setAutoCommit(false);
+            System.out.println("befor "+supplierOrderDTO);
             Supplier_oder supplier_oder = converter.toSupplierorder(supplierOrderDTO);
+            System.out.println("load "+supplier_oder);
             Supplier_oder supplier_oder1 = supplierOrderDAO.saveOrder(supplier_oder);
             if (supplier_oder1 != null) {
                 boolean updateLoadQty = itemDAO.updateLoadQty(supplier_oder.getDetails());
