@@ -1,13 +1,13 @@
-#btnDashboard,#btnEmployee,#btnItem,#btnCustomer,#btnSupplier,#btnLogout{
+#btnDashboard,#btnEmployee,#btnItem,#btnCustomer,#btnSupplier,#btnLogout,#btnOrder{
     -fx-background-color: #F8F6F4;
     -fx-text-fill: #000000;
 }
-#btnDashboard:hover,#btnEmployee:hover,#btnItem:hover,#btnCustomer:hover,#btnSupplier:hover,#btnLogout:hover{
+#btnDashboard:hover,#btnEmployee:hover,#btnItem:hover,#btnCustomer:hover,#btnSupplier:hover,#btnLogout:hover,#btnOrder:hover{
     -fx-background-color: #E8D8C4;
     -fx-text-fill: #000000;
     /*-fx-background-radius: 80%;*/
 }
-#btnDashboard:pressed,#btnEmployee:pressed,#btnItem:pressed,#btnCustomer:pressed,#btnSupplier:pressed,#btnLogout:pressed{
+#btnDashboard:pressed,#btnEmployee:pressed,#btnItem:pressed,#btnCustomer:pressed,#btnSupplier:pressed,#btnLogout:pressed,#btnOrder:pressed{
     -fx-background-color: #C7B7A3;
     -fx-text-fill: #000000;
     /*-fx-background-radius: 90%;*/

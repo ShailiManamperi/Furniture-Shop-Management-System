@@ -1,12 +1,17 @@
 package lk.ijse.shaili.system.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.shaili.system.Dto.BestCustomerDTO;
 import lk.ijse.shaili.system.Dto.BestItemDTO;
@@ -16,6 +21,8 @@ import lk.ijse.shaili.system.Service.ServiceFactory;
 import lk.ijse.shaili.system.Service.ServiceTypes;
 import lk.ijse.shaili.system.Service.custom.*;
 
+import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalTime;
 import java.util.Optional;
@@ -35,6 +42,7 @@ public class AdminDahboardController {
     public Label lblordercount;
     public AnchorPane chartPane;
     public BarChart bargraph;
+    public JFXButton btnattend;
 
     private CustomerService customerService;
     private InvoiceService invoiceService;
@@ -84,5 +92,14 @@ public class AdminDahboardController {
         String todaySalesCount = orderService.findTodaySalesCount();
         lblprice.setText(todaySales);
         lblordercount.setText(todaySalesCount);
+    }
+
+    public void showAttendFormOnAction(ActionEvent actionEvent) throws IOException {
+        URL resource = this.getClass().getResource("/View/main/attendanceFframe.fxml");
+        AnchorPane container = FXMLLoader.load(resource);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(container));
+        stage.centerOnScreen();
+        stage.show();
     }
 }
