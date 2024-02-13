@@ -55,5 +55,6 @@
          </font>
       </Label>
       <AnchorPane fx:id="pane1" layoutX="265.0" layoutY="15.0" prefHeight="700.0" prefWidth="985.0" />
+      <Label fx:id="lblTime" layoutX="53.0" layoutY="110.0" prefHeight="31.0" prefWidth="96.0" />
    </children>
 </AnchorPane>
