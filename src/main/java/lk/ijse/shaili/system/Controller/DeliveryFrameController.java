@@ -61,24 +61,10 @@ public class DeliveryFrameController {
         txtcustomername.setText(customerDTO.getName());
         txtaddress.setText(customerDTO.getAddress());
         loadDeliveryid();
-        loadvehicalid();
         if (p1.getStatus().equals("NO")){
             txtdistance.setText("0");
             txtdtotal.setText("0.0");
             txtftotal.setText(String.valueOf(p1.getPrice()));
-        }
-    }
-
-    private void loadvehicalid() {
-        try {
-            ObservableList<String> observableList = FXCollections.observableArrayList();
-            ArrayList<String> itemIdList = deliveryService.loadVehicleId();
-            for (String id : itemIdList) {
-                observableList.add(id);
-            }
-            cmbvehicle.setItems(observableList);
-        } catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -125,7 +111,7 @@ public class DeliveryFrameController {
     public void ordersetupOnAction(ActionEvent actionEvent) {
         String did = txtdeliveryid.getText();
         String oid = txtorderid.getText();
-        String vid = cmbvehicle.getSelectionModel().getSelectedItem().toString();
+        String vid = "l-001";
         String cid = txtcustomerid.getText();
         int distane = Integer.parseInt(txtdistance.getText());
         double amount = Double.parseDouble(txtdtotal.getText());
