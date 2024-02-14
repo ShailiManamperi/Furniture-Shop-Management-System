@@ -100,9 +100,6 @@ public class AdminDahboardController {
         String todaySalesCount = orderService.findTodaySalesCount();
         System.out.println(todaySalesCount);
         System.out.println(todaySales);
-        if (todaySales.equals(null)) {
-            lblprice.setText("0.0");
-        }
         lblprice.setText(todaySales);
         lblordercount.setText(todaySalesCount);
     }

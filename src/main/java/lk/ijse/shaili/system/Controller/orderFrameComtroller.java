@@ -30,6 +30,7 @@ import lk.ijse.shaili.system.Service.custom.OrderService;
 import lk.ijse.shaili.system.Service.custom.PlaceOrderService;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -252,16 +253,12 @@ public class orderFrameComtroller {
         deliveryframe();
     }
 
-    private void deliveryframe() {
+    private void deliveryframe() throws IOException {
+        URL resource = this.getClass().getResource("/View/main/DeliveryFrame.fxml");
+        AnchorPane container = FXMLLoader.load(resource);
         Stage stage = new Stage();
-        try {
-            stage.setScene(
-                    new Scene(FXMLLoader.load(
-                            Objects.requireNonNull(getClass().getResource(
-                                    "/view/DeliveryFrame.fxml")))));
-            stage.show();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+        stage.setScene(new Scene(container));
+        stage.centerOnScreen();
+        stage.show();
     }
 }
