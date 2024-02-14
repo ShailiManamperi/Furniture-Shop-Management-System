@@ -54,8 +54,8 @@ public class AdminDahboardController {
         this.invoiceService = ServiceFactory.getInstance().getService(ServiceTypes.INVOICE);
         this.orderService = ServiceFactory.getInstance().getService(ServiceTypes.ORDER);
         this.itemService = ServiceFactory.getInstance().getService(ServiceTypes.ITEM);
-//        loadbest();
-//        loadbarchart();
+        loadbest();
+        loadbarchart();
     }
 
     private void loadbarchart() throws SQLException {
@@ -79,17 +79,30 @@ public class AdminDahboardController {
 
     private void loadbest() {
         BestCustomerDTO bestCustomer = customerService.findBestCustomer();
+        if (bestCustomer.getCid().equals(null)){
+            lblCustname.setText("No One yet");
+            lblcustodercount.setText("0");
+        }
         CustomerDTO customerDTO = customerService.searchCustomer(bestCustomer.getCid(), "C_id");
         lblCustname.setText(customerDTO.getName());
         lblcustodercount.setText(String.valueOf(bestCustomer.getCount()));
 
         BestItemDTO bestItem = itemService.findBestItem();
+        if (bestItem.equals(null)){
+            lblItemname.setText("Not Yet");
+            lblordercount.setText("0");
+        }
         Optional<Item> item = itemService.searchItem(bestItem.getCode());
         lblItemname.setText(item.get().getName());
         lblitemOrdercount.setText(String.valueOf(bestItem.getCount()));
 
         String todaySales = orderService.findTodaySales();
         String todaySalesCount = orderService.findTodaySalesCount();
+        System.out.println(todaySalesCount);
+        System.out.println(todaySales);
+        if (todaySales.equals(null)) {
+            lblprice.setText("0.0");
+        }
         lblprice.setText(todaySales);
         lblordercount.setText(todaySalesCount);
     }

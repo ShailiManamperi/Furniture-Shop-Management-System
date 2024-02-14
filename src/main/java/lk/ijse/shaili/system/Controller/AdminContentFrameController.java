@@ -15,12 +15,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
+import lk.ijse.shaili.system.Dto.UserDTO;
+import lk.ijse.shaili.system.Service.ServiceFactory;
+import lk.ijse.shaili.system.Service.ServiceTypes;
+import lk.ijse.shaili.system.Service.custom.UserService;
 import lk.ijse.shaili.system.Util.Navigation;
 import lk.ijse.shaili.system.Util.Routes;
 import lk.ijse.shaili.system.Util.Task.TimeTask;
 
 import javax.naming.Name;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.LocalTime;
 
 public class AdminContentFrameController {
@@ -57,6 +62,9 @@ public class AdminContentFrameController {
 
     @FXML
     private Label lblName;
+    UserDTO u1 = LoginFrameController.u1;
+
+    public UserService userService;
 
 
     public void initialize() throws IOException {
@@ -116,7 +124,13 @@ public class AdminContentFrameController {
         Navigation.navigate(Routes.SUPPLIER,pane);
     }
 
-    public void logoutOnAction(ActionEvent actionEvent) {
+    public void logoutOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, IOException {
+        this.userService = ServiceFactory.getInstance().getService(ServiceTypes.USER);
+        UserDTO u2 = new UserDTO(u1.getUsername(),u1.getType(),u1.getPassword(),"No", u1.getHint());
+        boolean updateuser = userService.update(u2);
+        if (updateuser){
+            Navigation.navigate(Routes.SIGNIN, pane);
+        }
     }
 
     public void btndashboardOnMouseExitAction(MouseEvent mouseEvent) {
