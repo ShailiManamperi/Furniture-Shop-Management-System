@@ -65,7 +65,7 @@ public class Navigation {
                 break;
             case SIGNIN:
                 window.setTitle("Login form");
-                initUI("LoginFrame.fxml");
+                init("LoginFrame.fxml");
                 break;
         }
     }

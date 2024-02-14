@@ -50,11 +50,11 @@
 }#btndiplay:pressed,#btnnewload:pressed{
       -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#827656, #ffffff, #827656);
 }
-#btnNew,#btnsearch{
+#btnNew,#btnsearch,#btnaddcart,#btndelivery{
     -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#ba9b54, #ffffff, #ba9b54);
-}#btnNew:hover,#btnsearch :hover{
+}#btnNew:hover,#btnsearch :hover,#btnaddcart:hover,#btndelivery:hover{
      -fx-background-color: linear-gradient(from 0% 10% to 95% 100%,#a68a47, #ffffff, #a68a47);
-}#btnNew:pressed,#btnsearch:pressed{
+}#btnNew:pressed,#btnsearch:pressed,#btnaddcart:pressed,#btndelivery:pressed{
       -fx-background-color: linear-gradient(from 0% 10% to 95% 100% ,#8f763b, #ffffff, #8f763b);
 }
 
