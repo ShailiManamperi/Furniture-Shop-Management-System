@@ -253,13 +253,22 @@ public class ItemDAOImpl implements ItemDAO {
         BestItem b1 = null;
         try {
             String sql = "SELECT order_counts.code, order_counts.num_orders\n" +
-                    "FROM (SELECT management.order_detail.code, SUM(qty) as num_orders\n" +
-                    "FROM management.order_detail GROUP BY code) as order_counts\n" +
-                    "WHERE order_counts.num_orders = (SELECT MAX(num_orders)\n" +
-                    "FROM (SELECT SUM(qty) as num_orders\n" +
-                    "FROM management.order_detail GROUP BY code) as subquery);";
+                    "FROM (\n" +
+                    "         SELECT management.order_detail.code, SUM(qty) as num_orders\n" +
+                    "         FROM management.order_detail\n" +
+                    "         GROUP BY code\n" +
+                    "     ) as order_counts\n" +
+                    "WHERE order_counts.num_orders = (\n" +
+                    "    SELECT MAX(num_orders)\n" +
+                    "    FROM (\n" +
+                    "             SELECT SUM(qty) as num_orders\n" +
+                    "             FROM management.order_detail\n" +
+                    "             GROUP BY code\n" +
+                    "         ) as subquery\n" +
+                    ");";
             ResultSet result = DBUtil.executeQuery(sql);
             if(result.next()){
+                System.out.println("count"+result.getString(1));
                 b1 =  new BestItem(
                         result.getString(1),
                         result.getInt(2));

@@ -10,7 +10,9 @@ import lk.ijse.shaili.system.Entity.Order;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 public class OrderDAOImpl implements OrderDAO {
@@ -86,22 +88,6 @@ public class OrderDAOImpl implements OrderDAO {
         } catch (SQLException e) {
             throw new ConstraintViolationException(e);
         }
-    }
-
-    @Override
-    public String findNewOrderId() {
-        String itemid = null;
-        try {
-            String sql = "SELECT O_id FROM orders ORDER BY O_id DESC LIMIT 1";
-            ResultSet result = DBUtil.executeQuery(sql);
-            if (!result.next()) {
-                itemid = generateNextOrderId(result.getString(null));
-            }
-            itemid = generateNextOrderId(result.getString(1));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return itemid;
     }
 
     @Override
@@ -181,25 +167,36 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public String findTodaySales() {
-        String sql = "SELECT SUM(price) FROM orders WHERE orderDate = ?";
+        String sql = "SELECT SUM(price) FROM orders WHERE date = ?";
         try {
-            ResultSet resultSet = DBUtil.executeQuery(sql);
-            if(resultSet.next()){
-                return resultSet.getString(1);
+            ResultSet resultSet = DBUtil.executeQuery(sql, LocalDate.now());
+            if (resultSet.next()) {
+                String s = resultSet.getString("SUM(price)");
+                System.out.println("P " + s);
+                if (s != null) {
+                    int i = Integer.parseInt(s);
+                    return s;
+                } else {
+                    return "0.0";
+                }
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NumberFormatException e) {
             e.printStackTrace();
         }
-        return "000.00";
+        return "0.0";
     }
+
 
     @Override
     public String findTodaySaleCount() {
-        String sql = "SELECT COUNT(orderId) FROM orders WHERE orderDate = ?";
+        String sql = "SELECT COUNT(O_id) FROM orders WHERE date = ?";
         try {
-            ResultSet resultSet = DBUtil.executeQuery(sql);
+            System.out.println(LocalDate.now());
+            ResultSet resultSet = DBUtil.executeQuery(sql, LocalDate.now());
             if(resultSet.next()){
-                return resultSet.getString(1);
+                String s = resultSet.getString("COUNT(O_id)");
+                System.out.println("s " + s);
+                return s;
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -207,16 +204,42 @@ public class OrderDAOImpl implements OrderDAO {
         return "0";
     }
 
-    private String generateNextOrderId(String currentOrderId) {
-            if (currentOrderId == null) {
-                return "O-0000000001 ";
-            }else{
-                String[] split = currentOrderId.split("O-");
-                int id = Integer.parseInt(split[1]);
-                id++;
-                String newId = String.format("O-%010d", id);
-                return newId;
+    @Override
+    public String findNewOrderId() {
+        String orderId = null;
+
+        try {
+            String sql = "SELECT O_id FROM orders ORDER BY O_id DESC LIMIT 1";
+            ResultSet result = DBUtil.executeQuery(sql);
+
+            if (!result.next()) {
+                System.out.println("No existing orders found");
+                orderId = generateNextOrderId(null);
+            } else {
+                orderId = generateNextOrderId(result.getString("O_id"));
             }
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return orderId;
+    }
+
+    private String generateNextOrderId(String currentOrderId) {
+        if (currentOrderId == null) {
+            return "O-0000000001";
+        } else {
+            try {
+                int id = Integer.parseInt(currentOrderId.trim().substring(2)) + 1;
+                String newId = String.format("O-%010d", id);
+                System.out.println(newId);
+                return newId;
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }

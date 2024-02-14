@@ -6,6 +6,7 @@ import lk.ijse.shaili.system.Dao.DaoTypes;
 import lk.ijse.shaili.system.Db.DBConnection;
 import lk.ijse.shaili.system.Dto.BestItemDTO;
 import lk.ijse.shaili.system.Dto.ItemDTO;
+import lk.ijse.shaili.system.Entity.BestItem;
 import lk.ijse.shaili.system.Entity.Item;
 import lk.ijse.shaili.system.Service.custom.ItemService;
 import lk.ijse.shaili.system.Service.exception.*;
@@ -109,6 +110,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public BestItemDTO findBestItem() {
+        BestItem bestItem = itemDAO.findBestItem();
+        System.out.println(bestItem);
         return converter.fromBestItem(itemDAO.findBestItem());
     }
 
