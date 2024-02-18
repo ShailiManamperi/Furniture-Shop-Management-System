@@ -134,10 +134,8 @@ public class LoginFrameController {
         String uname = txtInUsername.getText();
         String password = txtInPassword.getText();
         UserDTO search = userService.search(uname);
-        System.out.println(password);
         String type = search.getType();
         String ps = search.getPassword();
-        System.out.println(ps);
         String verification = search.getVerification();
         if (password.equals(ps)){
             if(verification.equals("No")) {

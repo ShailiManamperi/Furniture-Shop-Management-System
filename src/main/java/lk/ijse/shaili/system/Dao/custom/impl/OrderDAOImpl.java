@@ -172,7 +172,6 @@ public class OrderDAOImpl implements OrderDAO {
             ResultSet resultSet = DBUtil.executeQuery(sql, LocalDate.now());
             if (resultSet.next()) {
                 String s = resultSet.getString("SUM(price)");
-                System.out.println("P " + s);
                 if (s != null) {
                     return s;
                 } else {
@@ -190,11 +189,9 @@ public class OrderDAOImpl implements OrderDAO {
     public String findTodaySaleCount() {
         String sql = "SELECT COUNT(O_id) FROM orders WHERE date = ?";
         try {
-            System.out.println(LocalDate.now());
             ResultSet resultSet = DBUtil.executeQuery(sql, LocalDate.now());
             if(resultSet.next()){
                 String s = resultSet.getString("COUNT(O_id)");
-                System.out.println("s " + s);
                 return s;
             }
         } catch (SQLException e) {
@@ -206,7 +203,6 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public String findNewOrderId() {
         String orderId = null;
-
         try {
             String sql = "SELECT O_id FROM orders ORDER BY O_id DESC LIMIT 1";
             ResultSet result = DBUtil.executeQuery(sql);

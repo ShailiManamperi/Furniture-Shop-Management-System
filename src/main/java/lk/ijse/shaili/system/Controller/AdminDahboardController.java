@@ -98,8 +98,6 @@ public class AdminDahboardController {
 
         String todaySales = orderService.findTodaySales();
         String todaySalesCount = orderService.findTodaySalesCount();
-        System.out.println(todaySalesCount);
-        System.out.println(todaySales);
         lblprice.setText(todaySales);
         lblordercount.setText(todaySalesCount);
     }

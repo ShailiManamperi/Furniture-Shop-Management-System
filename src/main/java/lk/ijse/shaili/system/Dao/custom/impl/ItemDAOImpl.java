@@ -93,7 +93,6 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public Optional<Item> findByPk(String pk) {
-        System.out.println(pk);
         try{
             ResultSet rst = DBUtil.executeQuery("SELECT * FROM items WHERE code=?", pk);
             if(rst.next()){

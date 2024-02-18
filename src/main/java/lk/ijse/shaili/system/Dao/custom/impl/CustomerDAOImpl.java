@@ -36,7 +36,6 @@ public class CustomerDAOImpl implements CustomerDAO {
     public Customer update(Customer entity) throws ConstraintViolationException {
         try {
             String sql ="UPDATE customer SET name = ?, address = ?, contact = ? ,nic = ? WHERE C_id = ?";
-            System.out.println(sql);
             if(DBUtil.executeUpdate(sql,entity.getName(),entity.getAddress(),entity.getContact(),entity.getNic(),entity.getCid())){
                 return entity;
             }

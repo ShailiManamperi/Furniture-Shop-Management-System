@@ -149,7 +149,6 @@ public class employeeDAOImpl implements employeeDAO {
         Employee e1=null;
         try {
             String sql = "Select * from employee where " + type + "= ?";
-            System.out.println(sql);
             ResultSet rst = DBUtil.executeQuery(sql, id);
             boolean b = existByPk(id);
             if(rst.next()){
