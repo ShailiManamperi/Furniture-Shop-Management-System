@@ -174,7 +174,6 @@ public class OrderDAOImpl implements OrderDAO {
                 String s = resultSet.getString("SUM(price)");
                 System.out.println("P " + s);
                 if (s != null) {
-                    int i = Integer.parseInt(s);
                     return s;
                 } else {
                     return "0.0";

@@ -283,8 +283,9 @@ public class ItemDAOImpl implements ItemDAO {
 
 
     private  boolean save(CartDetail cartDetail, PlaceOrder placeOrder) throws SQLException, ClassNotFoundException {
-        String sql = "INSERT INTO order_detail VALUES(?, ?, ?)";
-        return DBUtil.executeUpdate(sql,placeOrder.getOid(),cartDetail.getCode(),cartDetail.getQty() );
+        double price = cartDetail.getQty()*cartDetail.getUnitPrice();
+        String sql = "INSERT INTO order_detail VALUES(?, ?, ?, ?)";
+        return DBUtil.executeUpdate(sql,placeOrder.getOid(),cartDetail.getCode(),cartDetail.getQty(),price );
     }
 
 }

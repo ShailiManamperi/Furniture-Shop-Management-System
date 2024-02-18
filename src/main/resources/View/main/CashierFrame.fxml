@@ -18,7 +18,7 @@
             <Font name="Berlin Sans FB" size="24.0" />
          </font>
       </Label>
-      <VBox layoutX="21.0" layoutY="274.0" prefHeight="163.0" prefWidth="237.0" spacing="30.0">
+      <VBox layoutX="21.0" layoutY="222.0" prefHeight="163.0" prefWidth="237.0" spacing="30.0">
          <children>
             <JFXButton fx:id="btnOrder" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#showDahboardOnAction" onMouseEntered="#btnDashboradOnMouseEnteredAction" onMouseExited="#btndashboardOnMouseExitAction" prefHeight="55.0" prefWidth="242.0" text="Dashboard" textAlignment="CENTER">
                <font>
@@ -54,7 +54,12 @@
             <Font name="Berlin Sans FB" size="31.0" />
          </font>
       </Label>
-      <AnchorPane fx:id="pane1" layoutX="265.0" layoutY="15.0" prefHeight="700.0" prefWidth="985.0" />
+      <AnchorPane fx:id="pane1" layoutX="256.0" prefHeight="700.0" prefWidth="985.0" />
       <Label fx:id="lblTime" layoutX="53.0" layoutY="110.0" prefHeight="31.0" prefWidth="96.0" />
+      <ImageView fitHeight="192.0" fitWidth="240.0" layoutX="10.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Asstes/7RW.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

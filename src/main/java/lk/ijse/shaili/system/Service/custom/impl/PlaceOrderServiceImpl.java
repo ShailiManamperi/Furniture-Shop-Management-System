@@ -66,12 +66,13 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
                 if (isUpdated) {
                     boolean issaved = itemDAO.saveOrderDetails(placeOrder.getOrderDetails(), converter.toPlaceOrder(placeOrder));
                     if (issaved) {
+                        System.out.println("saved all");
                         DBConnection.getDbConnection().getConnection().commit();
                     }
                 }
             }
             DBConnection.getDbConnection().getConnection().rollback();
-            return false;
+            return true;
         } finally {
             DBConnection.getDbConnection().getConnection().setAutoCommit(true);
         }

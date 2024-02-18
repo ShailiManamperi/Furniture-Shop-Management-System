@@ -121,6 +121,7 @@ public class DeliveryFrameController {
         if (distane == 0){
             try {
                 boolean placeOrder = placeOrderService.PlaceOrderWithoutDelivery(converter.fromPlaceOrder(p1));
+                System.out.println(placeOrder);
                 if (placeOrder){
                     new Alert(Alert.AlertType.CONFIRMATION, "The Order is Placed!", ButtonType.OK, ButtonType.CLOSE).show();
                     }else {
